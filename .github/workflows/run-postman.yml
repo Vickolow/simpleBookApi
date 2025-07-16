@@ -24,4 +24,6 @@ jobs:
 
       - name: Run Postman Collection
         run: |
-          newman run Simple_Books_API_postman_collection.json
+          run: |
+            newman run SimpleBookAPI/Simple_Books_API_postman_collection.json
+
