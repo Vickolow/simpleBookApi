@@ -1,0 +1,21 @@
+name: Run Postman Collection
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # allows manual trigger
+
+jobs:
+  run-postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 🧪 Install Newman
+        run: npm install -g newman
+
+      - name: ▶️ Run Postman Collection
+        run: |
+          newman run Simple_Books_API_postman_collection.json
